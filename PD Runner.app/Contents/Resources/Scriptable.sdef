@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="PD Runner Scriptable">
+    <suite name="PD Runner Scripting" code="PDRn" description="PD Runner commands">
+        <command name="start" code="PDRnSTAr" description="Start the VM with the specified name">
+            <cocoa class="PD_Runner.startVM"/>
+            <parameter name="vm" code="VNAm" type="text" description="The name of the VM">
+                <cocoa key="name"/>
+            </parameter>
+            <parameter name="with password" code="PASd" type="text" optional="yes" description="Password of the encrypted VM">
+                <cocoa key="password"/>
+            </parameter>
+            <result type="text" description="Return value"/>
+        </command>
+        <command name="list all" code="PDRnLSAl" description="List all VMs">
+            <cocoa class="PD_Runner.listAllVM"/>
+            <result description="An array containing the name of all VMs">
+                <type type="text" list="yes"/>
+            </result>
+        </command>
+        <command name="start all" code="PDRnSTAl" description="Start all VMs">
+            <cocoa class="PD_Runner.startAllVM"/>
+            <result type="text" description="Return value"/>
+        </command>
+        <command name="stop all" code="PDRnSPAl" description="Stop all VMs">
+            <cocoa class="PD_Runner.stopAllVM"/>
+        </command>
+        <command name="hide icon" code="PDRnHIDe" description="Hide the menu bar icon when starting PD Runner until run 'show icon'">
+            <cocoa class="PD_Runner.hideIcon"/>
+        </command>
+        <command name="show icon" code="PDRnSHOw" description="Show the menu bar icon when starting PD Runner until run 'hide icon'">
+            <cocoa class="PD_Runner.showIcon"/>
+        </command>
+    </suite>
+</dictionary>
